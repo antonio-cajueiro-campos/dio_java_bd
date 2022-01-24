@@ -1,0 +1,3 @@
+public enum Tipo {
+	CONTA_CORRENTE, CONTA_POUPANCA
+}

@@ -2,13 +2,15 @@ public abstract class Conta implements IConta {
 
 	private static final int AGENCIA_PADRAO = 1;
 	private static int SEQUENCIAL = 1;
-
+	
+	protected Tipo tipo;
 	protected int agencia;
 	protected int numero;
 	protected Cliente cliente;
 	protected double saldo;
 
-	public Conta(Cliente cliente) {
+	public Conta(Cliente cliente, Tipo tipo) {
+		this.tipo = tipo;
 		this.cliente = cliente;
 		this.agencia = AGENCIA_PADRAO;
 		this.numero = SEQUENCIAL++;
@@ -44,8 +46,10 @@ public abstract class Conta implements IConta {
 
 	@Override
 	public String toString() {
-		return "Conta [agencia=" + agencia + ", cliente=" + cliente + ", numero=" + numero + ", saldo=" + saldo + "]";
+		return "Conta [agencia=" + agencia + ", cliente=" + cliente + ", numero=" + numero + ", saldo=" + saldo
+				+ ", tipo=" + tipo + "]";
 	}
+
 
 	
 }
